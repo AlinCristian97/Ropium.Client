@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { JokeModel } from "./joke.model";
 
@@ -14,5 +14,12 @@ export class ChuckNorrisService {
     
     getRandomJoke() {
         return this.http.get<JokeModel>(this.baseURL + `${this.endpoints.randomJoke}`);
+    }
+
+    getRandomJokeByCategory(category: string) {
+
+        const params = new HttpParams().set('category', category);
+
+        return this.http.get<JokeModel>(this.baseURL + `${this.endpoints.randomJoke}`, { params: params});
     }
 }
