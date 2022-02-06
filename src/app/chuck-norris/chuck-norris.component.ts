@@ -7,6 +7,7 @@ import { ChuckNorrisService } from './chuck-norris.service';
   styleUrls: ['./chuck-norris.component.css']
 })
 export class ChuckNorrisComponent implements OnInit {
+  joke: string;
     
   constructor(private chuckNorrisService: ChuckNorrisService) { }
 
@@ -14,7 +15,9 @@ export class ChuckNorrisComponent implements OnInit {
     this.onGetRandomJoke();
   }
 
-  onGetRandomJoke(){
-    this.chuckNorrisService.getRandomJoke();
+  onGetRandomJoke() {
+    this.chuckNorrisService.getRandomJoke().subscribe(j => {
+      this.joke = j.value;
+    });
   }
 }

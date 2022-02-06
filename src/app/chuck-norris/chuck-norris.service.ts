@@ -13,8 +13,6 @@ export class ChuckNorrisService {
     constructor(private http: HttpClient) { }
     
     getRandomJoke() {
-        this.http.get<JokeModel>(this.baseURL + `${this.endpoints.randomJoke}`).subscribe(joke => {
-            console.log(joke.value);
-        });
+        return this.http.get<JokeModel>(this.baseURL + `${this.endpoints.randomJoke}`);
     }
 }
