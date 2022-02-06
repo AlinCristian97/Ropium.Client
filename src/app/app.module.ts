@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     NgbModule,
     MatTabsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
